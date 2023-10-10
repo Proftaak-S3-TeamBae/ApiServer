@@ -1,4 +1,4 @@
-﻿namespace AI_Scanner_Service
+﻿namespace AI_Scanner_Service.DTOs
 {
     public class AITypeDTO
     {

@@ -1,4 +1,7 @@
-﻿namespace AI_Scanner_Service
+﻿using AI_Scanner_Service.DTOs;
+using AI_Scanner_Service.IManagers;
+
+namespace AI_Scanner_Service.Managers
 {
     public class AIManager : IAIManager
     {

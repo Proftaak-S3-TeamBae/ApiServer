@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AI_Scanner_Service\AI_Scanner_Service.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,7 @@
-
+using AI_Scanner_DB.Repositories;
+using AI_Scanner_Service.IManagers;
+using AI_Scanner_Service.Irepositories;
+using AI_Scanner_Service.Managers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+builder.Services.AddScoped<IAIManager, AIManager>();
+builder.Services.AddScoped<IUserManager, UserManager>();
+
+builder.Services.AddScoped<IAIServiceRepository, AIRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
