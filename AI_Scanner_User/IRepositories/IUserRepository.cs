@@ -1,6 +1,6 @@
 ﻿using AI_Scanner_Service.DTOs;
 
-namespace AI_Scanner_Service.Irepositories
+namespace AI_Scanner_User.IRepositories
 {
     public interface IUserRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace AI_Scanner_Service.DTOs
+﻿namespace AI_Scanner_User.DTOs
 {
     public class UserDTO
     {

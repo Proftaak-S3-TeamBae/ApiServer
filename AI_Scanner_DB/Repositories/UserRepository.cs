@@ -1,5 +1,5 @@
 ﻿using AI_Scanner_Service.DTOs;
-using AI_Scanner_Service.Irepositories;
+using AI_Scanner_User.IRepositories;
 
 namespace AI_Scanner_DB.Repositories
 {

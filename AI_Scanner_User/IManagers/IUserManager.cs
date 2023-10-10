@@ -1,6 +1,6 @@
-﻿using AI_Scanner_Service.DTOs;
+﻿using AI_Scanner_User.DTOs;
 
-namespace AI_Scanner_Service.IManagers
+namespace AI_Scanner_User.IManagers
 {
     public interface IUserManager
     {

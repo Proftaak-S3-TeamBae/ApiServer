@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AI_Scanner_Service\AI_Scanner_Service.csproj" />
+    <ProjectReference Include="..\AI_Scanner_User\AI_Scanner_User.csproj" />
   </ItemGroup>
 
 </Project>

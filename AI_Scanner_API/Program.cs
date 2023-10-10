@@ -1,7 +1,10 @@
 using AI_Scanner_DB.Repositories;
 using AI_Scanner_Service.IManagers;
-using AI_Scanner_Service.Irepositories;
+using AI_Scanner_Service.IRepositories;
 using AI_Scanner_Service.Managers;
+using AI_Scanner_User.Managers;
+using AI_Scanner_User.IManagers;
+using AI_Scanner_User.IRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
