@@ -5,6 +5,7 @@ using AI_Scanner_Service.Managers;
 using AI_Scanner_User.Managers;
 using AI_Scanner_User.IManagers;
 using AI_Scanner_User.IRepositories;
+using AI_Scanner_API.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-builder.Services.AddScoped<IAIManager, AIManager>();
+builder.Services.Configure<AIscannerDatabaseSettings>(
+    builder.Configuration.GetSection("AIScannerDatabase"));
+
+builder.Services.AddScoped<IAIManager, AIServiceManager>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 
 builder.Services.AddScoped<IAIServiceRepository, AIRepository>();

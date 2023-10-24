@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AI_Scanner_Service\AI_Scanner_Service.csproj" />
     <ProjectReference Include="..\AI_Scanner_User\AI_Scanner_User.csproj" />
   </ItemGroup>
