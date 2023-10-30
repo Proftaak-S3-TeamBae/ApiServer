@@ -5,13 +5,6 @@ namespace AI_Scanner_User.Managers
 {
     public class UserManager : IUserManager
     {
-        private readonly IUserManager _Usermanager;
-
-        public UserManager(IUserManager usermanager)
-        {
-            _Usermanager = usermanager;
-        }
-
         public ChangeUserDTO ChangeUser(string username, string password)
         {
             throw new NotImplementedException();

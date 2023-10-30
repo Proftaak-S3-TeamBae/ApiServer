@@ -5,13 +5,6 @@ namespace AI_Scanner_DB.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly IUserRepository _userRepository;
-
-        public UserRepository(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
-
         public ChangeUserDTO changeUser(string email, string password)
         {
             throw new NotImplementedException();

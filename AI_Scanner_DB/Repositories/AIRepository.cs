@@ -5,13 +5,6 @@ namespace AI_Scanner_DB.Repositories
 {
     public class AIRepository : IAIServiceRepository
     {
-        private readonly IAIServiceRepository _AIService;
-
-        public AIRepository(IAIServiceRepository AIService)
-        {
-            _AIService = AIService;
-        }
-
         public List<AIServiceDTO> AddAIService()
         {
             throw new NotImplementedException();

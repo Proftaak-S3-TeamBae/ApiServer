@@ -16,8 +16,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 builder.Services.Configure<AIscannerDatabaseSettings>(
     builder.Configuration.GetSection("AIScannerDatabase"));
 
@@ -26,6 +24,8 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 
 builder.Services.AddScoped<IAIServiceRepository, AIRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
