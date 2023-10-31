@@ -1,8 +1,5 @@
 ﻿using AI_Scanner_Service.DTOs;
-using AI_Scanner_Service.Entities;
 using AI_Scanner_Service.IManagers;
-using AI_Scanner_Service.Managers;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -13,36 +10,40 @@ namespace AI_Scanner_API.Controllers
 
     public class AiServiceController : ControllerBase
     {
-        private readonly IAIManager _aIServiceManager;
+        private readonly IAIServiceManager _aIServiceManager;
 
-        public AiServiceController(IAIManager aIServiceManager)
+        public AiServiceController(IAIServiceManager aIServiceManager)
             => _aIServiceManager = aIServiceManager;
 
         [HttpGet]
+        [ActionName("GetAllAIServices")]
         public async Task<List<AIServiceDTO>> GetAllAIServices()
-            => await _aIServiceManager.GetAllAISystems();
+            => await _aIServiceManager.GetAllAIServices();
 
         [HttpGet]
-        public async Task<List<AIServiceDTO>> GetAllAISystemsByType(AITypeDTO type)
-            => await _aIServiceManager.GetAllAISystemsByType(type);
+        [ActionName("GetAllAISystemsByType")]
+        public async Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type)
+            => await _aIServiceManager.GetAllAIServicesByType(type);
 
         [HttpGet]
+        [ActionName("GetAIServiceById")]
         public async Task<List<AIServiceDTO>> GetAIServiceById(AITypeDTO id)
-            => await _aIServiceManager.GetAllAISystemsByType(id);
+            => await _aIServiceManager.GetAllAIServicesByType(id);
 
         [HttpPut]
-        public async Task<List<AIServiceDTO>> EditAISystems(string id)
-            => await _aIServiceManager.EditAISystems(id);
+        [ActionName("EditAISystem")]
+        public async Task<List<AIServiceDTO>> EditAIService(string id)
+            => await _aIServiceManager.EditAISystem(id);
 
 
         [HttpPost]
-        public async Task<AIServiceDTO> AddAISystems()
-            => await _aIServiceManager.AddAISystem();
+        public async Task<AIServiceDTO> AddAIService()
+            => await _aIServiceManager.AddAIService();
 
 
         [HttpPost]
-        public async Task<List<AIServiceDTO>> ApproveAIList()
-            => await _aIServiceManager.ApproveAISystemList();
+        public async Task<List<AIServiceDTO>> ApproveAIServiceList(List<AIServiceDTO> aISystemList)
+            => await _aIServiceManager.ApproveAIServiceList(aISystemList);
 
         [HttpDelete]
         public void RemoveAISystem(string id)

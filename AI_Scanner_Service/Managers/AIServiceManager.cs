@@ -9,7 +9,7 @@ namespace AI_Scanner_Service.Managers
     /// <summary>
     /// The manager for ai services
     /// </summary>
-    public class AIServiceManager : IAIManager
+    public class AIServiceManager : IAIServiceManager
     {
         /// The name of the ai service collection
         private readonly string _collectionName = "AIservice";
@@ -23,7 +23,7 @@ namespace AI_Scanner_Service.Managers
             _aiServiceCollection = database.GetCollection<AIServiceDTO>(_collectionName);
         }
 
-        public Task<AIServiceDTO> AddAISystem()
+        public Task<AIServiceDTO> AddAIService()
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace AI_Scanner_Service.Managers
         public void ApproveAISystemList(List<AIServiceDTO> aISystemList)
             => _aiServiceCollection.InsertMany(aISystemList);
 
-        public Task<List<AIServiceDTO>> EditAISystems(string id)
+        public Task<List<AIServiceDTO>> EditAISystem(string id)
         {
             throw new NotImplementedException();
         }
@@ -39,10 +39,10 @@ namespace AI_Scanner_Service.Managers
         public Task<AIServiceDTO> GetAIServiceById(string id)
             => (Task<AIServiceDTO>)_aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
 
-        public Task<List<AIServiceDTO>> GetAllAISystems()
+        public Task<List<AIServiceDTO>> GetAllAIServices()
             => _aiServiceCollection.Find(AIServiceDTO => true).ToListAsync();
 
-        public Task<List<AIServiceDTO>> GetAllAISystemsByType(AITypeDTO type)
+        public Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type)
             => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Type == type.Id).ToListAsync();
 
         public Task RemoveAISystem(string id)
