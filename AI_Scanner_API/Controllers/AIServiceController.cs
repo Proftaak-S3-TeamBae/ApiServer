@@ -42,7 +42,7 @@ namespace AI_Scanner_API.Controllers
 
         [HttpPost]
         public async Task<List<AIServiceDTO>> ApproveAIList()
-            => await _aIServiceManager.ApproveAISystemList();
+            => await _aIServiceManager.ApproveAISystemList(new List<AIServiceDTO> {});
 
         [HttpDelete]
         public void RemoveAISystem(string id)
