@@ -16,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<AIscannerDatabaseSettings>(
+builder.Services.Configure<AIScannerDatabaseSettings>(
     builder.Configuration.GetSection("AIScannerDatabase"));
 
 builder.Services.AddScoped<IAIServiceManager, AIServiceManager>();

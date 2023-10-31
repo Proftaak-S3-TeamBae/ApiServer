@@ -16,7 +16,7 @@ namespace AI_Scanner_Service.Managers
 
         private readonly IMongoCollection<AIServiceDTO> _aiServiceCollection;
 
-        public AIServiceManager(IOptions<AIscannerDatabaseSettings> scannerAppSettings)
+        public AIServiceManager(IOptions<AIScannerDatabaseSettings> scannerAppSettings)
         {
             var mongoClient = new MongoClient(scannerAppSettings.Value.ConnectionString);
             var database = mongoClient.GetDatabase(scannerAppSettings.Value.DatabaseName);
@@ -24,6 +24,11 @@ namespace AI_Scanner_Service.Managers
         }
 
         public Task<AIServiceDTO> AddAIService()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AIServiceDTO>> ApproveAIServiceList(List<AIServiceDTO> aISystemList)
         {
             throw new NotImplementedException();
         }

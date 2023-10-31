@@ -3,7 +3,7 @@
     /// <summary>
     /// The database settings read from appsettings.json
     /// </summary>
-    public class AIscannerDatabaseSettings
+    public class AIScannerDatabaseSettings
     {
         public string? ConnectionString { get; private set; }
         public string? DatabaseName { get; private set; }

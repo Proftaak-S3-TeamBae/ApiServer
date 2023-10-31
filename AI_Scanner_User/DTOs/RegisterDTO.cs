@@ -3,9 +3,9 @@
     public class RegisterDTO
     {
         public int Id;
-        public string Name;
-        public string Email;
-        public string Password;
-        public string HashedPassword;
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? HashedPassword { get; set; }
     }
 }
