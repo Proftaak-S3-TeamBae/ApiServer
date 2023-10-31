@@ -2,10 +2,10 @@
 {
     public class ChangeUserDTO
     {
-        public int Id;
-        public string Name; 
-        public string Password;
-        public string HashedPassword;
-        public int RoleId;
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Password { get; set; }
+        public string? HashedPassword { get; set; }
+        public int RoleId { get; set; }
     }
 }

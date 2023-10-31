@@ -2,6 +2,9 @@
 
 namespace AI_Scanner_Service.IManagers
 {
+    /// <summary>
+    /// The interface for the manager for ai services
+    /// </summary>
     public interface IAIServiceManager
     {
         public Task<AIServiceDTO> AddAIService();

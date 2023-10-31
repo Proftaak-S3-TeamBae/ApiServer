@@ -1,6 +1,9 @@
 ﻿namespace AI_Scanner_Service.Entities
 {
-    public class AIServiceEntity
+    /// <summary>
+    /// Represents an AI Service
+    /// </summary>
+    public class AIService
     {
         public int Id { get; private set; }
 
@@ -12,7 +15,7 @@
 
         public string Purpose { get; private set; }
 
-        public AIServiceEntity(int id, string type, DateTime dateAdded, string owner, string purpose)
+        public AIService(int id, string type, DateTime dateAdded, string owner, string purpose)
         {
             Id = id;
             Type = type;

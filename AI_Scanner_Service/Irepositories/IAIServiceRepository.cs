@@ -2,6 +2,9 @@
 
 namespace AI_Scanner_Service.IRepositories
 {
+    /// <summary>
+    /// The database repository for ai services
+    /// </summary>
     public interface IAIServiceRepository
     {
         public List<AIServiceDTO> GetAllAIServices();
