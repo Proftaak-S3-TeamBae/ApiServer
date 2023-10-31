@@ -41,18 +41,9 @@ namespace AI_Scanner_Service.Managers
         public Task<AIServiceDTO> GetAIServiceById(string id)
             => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
 
-        /// <summary>
-        /// Get the list of all ai systems from all the ai services
-        /// </summary>
-        /// <returns>All the ai systems in all serivces</returns>
         public Task<List<AIServiceDTO>> GetAllAISystems()
             => _aiServiceCollection.Find(AIServiceDTO => true).ToListAsync();
 
-        /// <summary>
-        /// Get the list of all ai systems from all the ai services of a specific type
-        /// </summary>
-        /// <param name="type">The type of the ai system</param>
-        /// <returns>All the ai systems in all serivces of the specified type</returns>
         public Task<List<AIServiceDTO>> GetAllAISystemsByType(AITypeDTO type)
             => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Type == type.Id).ToListAsync();
 
