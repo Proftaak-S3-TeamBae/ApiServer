@@ -36,8 +36,8 @@ namespace AI_Scanner_API.Controllers
 
 
         [HttpPost]
-        public async Task<List<AIServiceDTO>> AddAISystems()
-            => await _aIServiceManager.AddAISystems();
+        public async Task<AIServiceDTO> AddAISystems()
+            => await _aIServiceManager.AddAISystem();
 
 
         [HttpPost]
