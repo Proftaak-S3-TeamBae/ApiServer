@@ -7,12 +7,18 @@ namespace AI_Scanner_Service.IManagers
     /// </summary>
     public interface IAIServiceManager
     {
+        /// <summary>
+        /// Add a new ai service
+        /// </summary>
+        /// <returns></returns>
         public Task<AIServiceDTO> AddAIService();
 
+        /// <summary>
+        /// Approve a list of ai services
+        /// </summary>
+        /// <param name="aISystemList"></param>
+        /// <returns></returns>
         public Task<List<AIServiceDTO>> ApproveAIServiceList(List<AIServiceDTO> aISystemList);
-
-
-        //public Task<AIServiceDTO> GetAIServiceById(int id);
 
         /// <summary>
         /// Get the list of all ai systems from all the ai services
@@ -27,9 +33,19 @@ namespace AI_Scanner_Service.IManagers
         /// <returns>All the ai systems in all services of the specified type</returns>
         public Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type);
 
+        /// <summary>
+        /// Get an ai system by id
+        /// </summary>
         public Task<AIServiceDTO> GetAIServiceById(string id);
+
+        /// <summary>
+        /// Edit an ai system
+        /// </summary>
         public Task<List<AIServiceDTO>> EditAISystem(string id);
 
+        /// <summary>
+        /// Remove an ai system
+        /// </summary>
         public Task RemoveAISystem(string id);
     }
 }

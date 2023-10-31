@@ -18,36 +18,68 @@ namespace AI_Scanner_API.Controllers
         public AiServiceController(IAIServiceManager aIServiceManager)
             => _aIServiceManager = aIServiceManager;
 
+        /// <summary>
+        /// Add a new ai service
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Route("add")]
         public async Task<AIServiceDTO> AddAIService()
             => await _aIServiceManager.AddAIService();
 
+        /// <summary>
+        /// Approve a list of ai services
+        /// </summary>
+        /// <param name="aISystemList"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("addlist")]
         public async Task<List<AIServiceDTO>> ApproveAIServiceList(List<AIServiceDTO> aISystemList)
             => await _aIServiceManager.ApproveAIServiceList(aISystemList);
 
+        /// <summary>
+        /// Get all ai services
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("all")]
         public async Task<List<AIServiceDTO>> GetAllAIServices()
             => await _aIServiceManager.GetAllAIServices();
 
+        /// <summary>
+        /// Get all ai services by type
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("allbytype")]
         public async Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type)
             => await _aIServiceManager.GetAllAIServicesByType(type);
 
+        /// <summary>
+        /// Get all ai services by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("allbyid")]
         public async Task<List<AIServiceDTO>> GetAIServiceById(AITypeDTO id)
             => await _aIServiceManager.GetAllAIServicesByType(id);
 
+        /// <summary>
+        /// Edit an ai service
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("edit")]
         public async Task<List<AIServiceDTO>> EditAIService(string id)
             => await _aIServiceManager.EditAISystem(id);
 
+        /// <summary>
+        /// Remove an ai service
+        /// </summary>s
+        /// <param name="id"></param>
         [HttpDelete]
         [Route("remove")]
         public void RemoveAISystem(string id)
