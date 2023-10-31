@@ -38,9 +38,8 @@ namespace AI_Scanner_Service.Managers
             throw new NotImplementedException();
         }
 
-        // hier was max nog mee bezig
-        //public Task<AIServiceDTO> GetAIServiceById(int id)
-        //    => _aiServiceCollection.Find(AIServiceDTO ;
+        public Task<AIServiceDTO> GetAIServiceById(string id)
+            => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
 
         /// <summary>
         /// Get the list of all ai systems from all the ai services
