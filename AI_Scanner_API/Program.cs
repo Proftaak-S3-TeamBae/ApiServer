@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<AIscannerDatabaseSettings>(
     builder.Configuration.GetSection("AIScannerDatabase"));
 
-builder.Services.AddScoped<IAIManager, AIServiceManager>();
+builder.Services.AddScoped<IAIServiceManager, AIServiceManager>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 
 builder.Services.AddScoped<IAIServiceRepository, AIRepository>();
