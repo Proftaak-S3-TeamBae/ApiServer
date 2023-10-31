@@ -8,7 +8,6 @@ namespace AI_Scanner_Service.IManagers
 
         public Task<List<AIServiceDTO>> ApproveAIServiceList(List<AIServiceDTO> aISystemList);
 
-        public Task<List<AIServiceDTO>> EditAISystem(string id);
 
         //public Task<AIServiceDTO> GetAIServiceById(int id);
 
@@ -24,6 +23,9 @@ namespace AI_Scanner_Service.IManagers
         /// <param name="type">The type of the ai system</param>
         /// <returns>All the ai systems in all services of the specified type</returns>
         public Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type);
+
+        public Task<AIServiceDTO> GetAIServiceById(string id);
+        public Task<List<AIServiceDTO>> EditAISystem(string id);
 
         public Task RemoveAISystem(string id);
     }
