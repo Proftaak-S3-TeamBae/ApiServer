@@ -10,7 +10,11 @@ namespace AI_Scanner_DB.Repositories
             throw new NotImplementedException();
         }
 
-        public AIServiceDTO ChangeAIService(AIServiceDTO service)
+        public List<AIServiceDTO> GetAllAIServices()
+        {
+            throw new NotImplementedException();
+        }
+        public List<AIServiceDTO> GetAIServicesByType(string type)
         {
             throw new NotImplementedException();
         }
@@ -20,15 +24,11 @@ namespace AI_Scanner_DB.Repositories
             throw new NotImplementedException();
         }
 
-        public List<AIServiceDTO> GetAIServicesByType(string type)
+        public AIServiceDTO ChangeAIService(AIServiceDTO service)
         {
             throw new NotImplementedException();
         }
 
-        public List<AIServiceDTO> GetAllAIServices()
-        {
-            throw new NotImplementedException();
-        }
 
         public void RemoveAIService(AIServiceDTO service)
         {
