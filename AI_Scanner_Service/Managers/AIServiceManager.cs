@@ -1,6 +1,7 @@
 ﻿using AI_Scanner_API.Config;
 using AI_Scanner_Service.DTOs;
 using AI_Scanner_Service.IManagers;
+using AI_Service;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
@@ -16,11 +17,15 @@ namespace AI_Scanner_Service.Managers
 
         private readonly IMongoCollection<AIServiceDTO> _aiServiceCollection;
 
-        public AIServiceManager(IOptions<AIScannerDatabaseSettings> scannerAppSettings)
+        private readonly IAIIntegrationManager _aiIntegrationManager;
+
+        public AIServiceManager(IOptions<AIScannerDatabaseSettings> scannerAppSettings, IAIIntegrationManager aiIntegrationManager)
         {
-            var mongoClient = new MongoClient(scannerAppSettings.Value.ConnectionString);
-            var database = mongoClient.GetDatabase(scannerAppSettings.Value.DatabaseName);
-            _aiServiceCollection = database.GetCollection<AIServiceDTO>(_collectionName);
+            // var mongoClient = new MongoClient(scannerAppSettings.Value.ConnectionString);
+            // var database = mongoClient.GetDatabase(scannerAppSettings.Value.DatabaseName);
+            // _aiServiceCollection = database.GetCollection<AIServiceDTO>(_collectionName);
+
+            _aiIntegrationManager = aiIntegrationManager;
         }
 
         public Task<AIServiceDTO> AddAIService()
@@ -44,8 +49,19 @@ namespace AI_Scanner_Service.Managers
         public Task<AIServiceDTO> GetAIServiceById(string id)
             => (Task<AIServiceDTO>)_aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
 
-        public Task<List<AIServiceDTO>> GetAllAIServices()
-            => _aiServiceCollection.Find(AIServiceDTO => true).ToListAsync();
+        public async Task<List<AIServiceDTO>> GetAllAIServices()
+        {
+            var integration = _aiIntegrationManager.GetIntegration("openai");
+            var services = await integration.GetAIServices();
+            return services.Select(service => new AIServiceDTO
+            {
+                Id = "",
+                Type = "LLM",
+                DateAdded = DateTime.Now,
+                Owner = "OpenAI",
+                Purpose = service.Id,
+            }).ToList();
+        }
 
         public Task<List<AIServiceDTO>> GetAllAIServicesByType(AITypeDTO type)
             => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Type == type.Id).ToListAsync();

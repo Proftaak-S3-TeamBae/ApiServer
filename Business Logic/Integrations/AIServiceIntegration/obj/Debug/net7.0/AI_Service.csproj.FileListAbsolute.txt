@@ -1,0 +1,12 @@
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/bin/Debug/net7.0/AI_Service.deps.json
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/bin/Debug/net7.0/AI_Service.dll
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/bin/Debug/net7.0/AI_Service.pdb
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.csproj.AssemblyReference.cache
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.GeneratedMSBuildEditorConfig.editorconfig
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.AssemblyInfoInputs.cache
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.AssemblyInfo.cs
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.csproj.CoreCompileInputs.cache
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.dll
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/refint/AI_Service.dll
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/AI_Service.pdb
+/home/lara/Documents/School/ProjectBae/ApiServer/Business Logic/Integrations/AIServiceIntegration/obj/Debug/net7.0/ref/AI_Service.dll
