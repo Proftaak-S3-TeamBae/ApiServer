@@ -23,7 +23,7 @@ namespace AI_Scanner_Service.Managers
             _aiServiceCollection = database.GetCollection<AIServiceDTO>(_collectionName);
         }
 
-        public Task<List<AIServiceDTO>> AddAISystems()
+        public Task<AIServiceDTO> AddAISystem()
         {
             throw new NotImplementedException();
         }

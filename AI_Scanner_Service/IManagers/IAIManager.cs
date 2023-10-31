@@ -4,7 +4,7 @@ namespace AI_Scanner_Service.IManagers
 {
     public interface IAIManager
     {
-        public Task<List<AIServiceDTO>> AddAISystems();
+        public Task<AIServiceDTO> AddAISystem();
 
         public Task<List<AIServiceDTO>> ApproveAISystemList(List<AIServiceDTO> aISystemList);
 
