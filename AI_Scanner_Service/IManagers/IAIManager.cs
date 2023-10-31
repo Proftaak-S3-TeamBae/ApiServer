@@ -6,7 +6,7 @@ namespace AI_Scanner_Service.IManagers
     {
         public Task<List<AIServiceDTO>> AddAISystems();
 
-        public Task<List<AIServiceDTO>> ApproveAISystemList();
+        public Task<List<AIServiceDTO>> ApproveAISystemList(List<AIServiceDTO> aISystemList);
 
         public Task<List<AIServiceDTO>> EditAISystems(string id);
 

@@ -28,10 +28,8 @@ namespace AI_Scanner_Service.Managers
             throw new NotImplementedException();
         }
 
-        public Task<List<AIServiceDTO>> ApproveAISystemList()
-        {
-            throw new NotImplementedException();
-        }
+        public void ApproveAISystemList(List<AIServiceDTO> aISystemList)
+            => _aiServiceCollection.InsertMany(aISystemList);
 
         public Task<List<AIServiceDTO>> EditAISystems(string id)
         {
@@ -39,7 +37,7 @@ namespace AI_Scanner_Service.Managers
         }
 
         public Task<AIServiceDTO> GetAIServiceById(string id)
-            => _aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
+            => (Task<AIServiceDTO>)_aiServiceCollection.Find(AIServiceDTO => AIServiceDTO.Id == id);
 
         public Task<List<AIServiceDTO>> GetAllAISystems()
             => _aiServiceCollection.Find(AIServiceDTO => true).ToListAsync();
