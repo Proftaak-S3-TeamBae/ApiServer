@@ -5,7 +5,7 @@
     /// </summary>
     public class AIScannerDatabaseSettings
     {
-        public string? ConnectionString { get; private set; }
-        public string? DatabaseName { get; private set; }
+        public string? ConnectionString { get;  set; }
+        public string? DatabaseName { get;  set; }
     }
 }
