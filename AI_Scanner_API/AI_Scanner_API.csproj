@@ -17,6 +17,7 @@
     <ProjectReference Include="..\AI_Scanner_DB\AI_Scanner_DB.csproj" />
     <ProjectReference Include="..\AI_Scanner_Service\AI_Scanner_Service.csproj" />
     <ProjectReference Include="..\AI_Scanner_User\AI_Scanner_User.csproj" />
+    <ProjectReference Include="..\Business Logic\Integrations\AIServiceIntegration\AI_Service.csproj" />
   </ItemGroup>
 
 </Project>

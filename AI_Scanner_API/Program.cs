@@ -6,6 +6,7 @@ using AI_Scanner_User.Managers;
 using AI_Scanner_User.IManagers;
 using AI_Scanner_User.IRepositories;
 using AI_Scanner_API.Config;
+using AI_Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,11 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 
 builder.Services.AddScoped<IAIServiceRepository, AIRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// Add the ai integration manager
+var aiIntegrationService = new AIIntegrationManager();
+aiIntegrationService.AddIntegration(new OpenAIIntegration(builder.Configuration["OpenAI:Key"] ?? throw new Exception("OpenAI integration failed")));
+builder.Services.AddScoped<IAIIntegrationManager>(provider => aiIntegrationService);
 
 var app = builder.Build();
 
